@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0f">
+  <meta name="description" content="Portfolio of Rey Jack Crisostomo — Graphic Designer and Digital Content Creator.">
+  <meta property="og:title" content="Rey Jack Crisostomo — Graphic Designer">
+  <meta property="og:description" content="Graphic design, branding and digital content portfolio.">
+  <meta property="og:type" content="website">
+  <title>Rey Jack Crisostomo — Graphic Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#09090c; --panel:#111116; --text:#f6f6f7; --muted:#a7a7b2;
+      --line:#26262f; --accent:#ffffff; --max:1180px; --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(calc(100% - 40px),var(--max));margin:auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(9,9,12,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:"Space Grotesk";font-weight:700;letter-spacing:-.04em}
+    .brand span{color:var(--muted)}
+    .navlinks{display:flex;gap:26px;align-items:center;font-size:14px;color:var(--muted)}
+    .navlinks a:hover{color:var(--text)}
+    .nav-cta{padding:10px 15px;border:1px solid var(--line);border-radius:999px;color:var(--text)!important}
+    .menu{display:none;background:none;border:0;color:white;font-size:26px}
+    .hero{padding:120px 0 90px;min-height:75vh;display:grid;align-items:center}
+    .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);font-weight:700}
+    h1{font-family:"Space Grotesk";font-size:clamp(48px,8vw,100px);line-height:.95;letter-spacing:-.07em;max-width:1000px;margin:20px 0}
+    .hero p{max-width:680px;font-size:clamp(17px,2vw,21px);color:var(--muted);margin:0 0 32px}
+    .buttons{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:999px;border:1px solid var(--line);font-weight:700;font-size:14px}
+    .btn.primary{background:white;color:#09090c;border-color:white}
+    section{padding:90px 0;border-top:1px solid var(--line)}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+    .section-head h2{font-family:"Space Grotesk";font-size:clamp(34px,5vw,58px);letter-spacing:-.055em;margin:8px 0 0}
+    .section-head p{max-width:450px;color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px}
+    .about-copy{font-size:20px;color:#ddd;max-width:720px}
+    .facts{display:grid;gap:12px}
+    .fact{padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+    .fact small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:10px}
+    .fact strong{display:block;margin-top:5px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project-card{border:1px solid var(--line);background:var(--panel);border-radius:var(--radius);overflow:hidden}
+    .project-image{width:100%;aspect-ratio:4/3;padding:0;border:0;background:#0d0d11;cursor:pointer;overflow:hidden}
+    .project-image img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+    .project-card:hover img{transform:scale(1.035)}
+    .project-info{padding:18px 20px 22px;position:relative}
+    .project-number{color:var(--muted);font-size:11px;letter-spacing:.15em}
+    .project-info h3{margin:5px 0 2px;font-family:"Space Grotesk";font-size:19px}
+    .project-info p{margin:0;color:var(--muted);font-size:13px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+    .skill{border:1px solid var(--line);padding:10px 14px;border-radius:999px;color:#ddd;background:var(--panel)}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+    .contact h2{font-family:"Space Grotesk";font-size:clamp(40px,6vw,70px);line-height:1;letter-spacing:-.06em;margin:10px 0 20px}
+    .contact-box{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+    .contact-box a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-weight:600}
+    .contact-box a:last-child{border-bottom:0}
+    footer{padding:35px 0;color:var(--muted);font-size:13px}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+    .modal.open{display:flex}
+    .modal img{max-height:88vh;max-width:94vw;object-fit:contain}
+    .close{position:fixed;top:20px;right:25px;background:none;border:0;color:white;font-size:34px;cursor:pointer}
+    .original-link{margin-top:24px;color:var(--muted);font-size:13px}
+    @media(max-width:850px){
+      .navlinks{display:none} .menu{display:block}
+      .hero{padding:85px 0 70px;min-height:auto}
+      section{padding:70px 0}
+      .about-grid,.contact{grid-template-columns:1fr;gap:30px}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:560px){
+      .container{width:min(calc(100% - 28px),var(--max))}
+      nav{height:64px}
+      .hero{padding:65px 0 55px}
+      h1{font-size:52px}
+      .gallery{grid-template-columns:1fr}
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+      .btn{width:100%}
+      .buttons{display:grid}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#top">REY JACK <span>CRISOSTOMO</span></a>
+      <div class="navlinks">
+        <a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+        <a class="nav-cta" href="mailto:reyjackcrisostomo5@gmail.com">Hire me</a>
+      </div>
+      <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    </nav>
+    <div id="mobileNav" class="navlinks" style="display:none;padding:0 0 18px;flex-direction:column;align-items:flex-start"></div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Graphic Designer • Digital Content Creator • IT Graduate</div>
+      <h1>Design that gets<br>noticed.</h1>
+      <p>I’m Rey Jack Crisostomo — a graphic designer focused on visual content, branding, promotional graphics and digital experiences.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#work">View my work ↓</a>
+        <a class="btn" href="mailto:reyjackcrisostomo5@gmail.com">Contact me</a>
+        <a class="btn" href="https://www.instagram.com/nishiii.designs" target="_blank" rel="noopener">Instagram portfolio ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="eyebrow">Selected work</div><h2>Projects & artwork</h2></div>
+        <p>A curated selection of visual work from my portfolio. Tap any project to view it larger.</p>
+      </div>
+      <div class="gallery">
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/laban.png" aria-label="Open Laban">
+          <img src="assets/portfolio/laban.png" alt="Laban" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">01</span>
+          <h3>Laban</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/sprite.png" aria-label="Open Sprite">
+          <img src="assets/portfolio/sprite.png" alt="Sprite" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">02</span>
+          <h3>Sprite</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/angel.png" aria-label="Open Angel">
+          <img src="assets/portfolio/angel.png" alt="Angel" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">03</span>
+          <h3>Angel</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/keep grinding.png" aria-label="Open Keep Grinding">
+          <img src="assets/portfolio/keep grinding.png" alt="Keep Grinding" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">04</span>
+          <h3>Keep Grinding</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/fash.png" aria-label="Open Fash">
+          <img src="assets/portfolio/fash.png" alt="Fash" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">05</span>
+          <h3>Fash</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/ashes.png" aria-label="Open Ashes">
+          <img src="assets/portfolio/ashes.png" alt="Ashes" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">06</span>
+          <h3>Ashes</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/ReticulatedPython.png" aria-label="Open Reticulatedpython">
+          <img src="assets/portfolio/ReticulatedPython.png" alt="Reticulatedpython" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">07</span>
+          <h3>Reticulatedpython</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/prac.png" aria-label="Open Prac">
+          <img src="assets/portfolio/prac.png" alt="Prac" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">08</span>
+          <h3>Prac</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/Tarsier_ (1).png" aria-label="Open Tarsier (1)">
+          <img src="assets/portfolio/Tarsier_ (1).png" alt="Tarsier (1)" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">09</span>
+          <h3>Tarsier (1)</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/kyrie.png" aria-label="Open Kyrie">
+          <img src="assets/portfolio/kyrie.png" alt="Kyrie" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">10</span>
+          <h3>Kyrie</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/noodles.png" aria-label="Open Noodles">
+          <img src="assets/portfolio/noodles.png" alt="Noodles" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">11</span>
+          <h3>Noodles</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/nike 2.png" aria-label="Open Nike 2">
+          <img src="assets/portfolio/nike 2.png" alt="Nike 2" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">12</span>
+          <h3>Nike 2</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/electric.png" aria-label="Open Electric">
+          <img src="assets/portfolio/electric.png" alt="Electric" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">13</span>
+          <h3>Electric</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/grind.png" aria-label="Open Grind">
+          <img src="assets/portfolio/grind.png" alt="Grind" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">14</span>
+          <h3>Grind</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/illoard.png" aria-label="Open Illoard">
+          <img src="assets/portfolio/illoard.png" alt="Illoard" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">15</span>
+          <h3>Illoard</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/just do it.png" aria-label="Open Just Do It">
+          <img src="assets/portfolio/just do it.png" alt="Just Do It" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">16</span>
+          <h3>Just Do It</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/basket.png" aria-label="Open Basket">
+          <img src="assets/portfolio/basket.png" alt="Basket" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">17</span>
+          <h3>Basket</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/basket2.png" aria-label="Open Basket2">
+          <img src="assets/portfolio/basket2.png" alt="Basket2" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">18</span>
+          <h3>Basket2</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/barger.png" aria-label="Open Barger">
+          <img src="assets/portfolio/barger.png" alt="Barger" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">19</span>
+          <h3>Barger</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/whisper.png" aria-label="Open Whisper">
+          <img src="assets/portfolio/whisper.png" alt="Whisper" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">20</span>
+          <h3>Whisper</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/gtr.png" aria-label="Open Gtr">
+          <img src="assets/portfolio/gtr.png" alt="Gtr" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">21</span>
+          <h3>Gtr</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/Jose Rizal.png" aria-label="Open Jose Rizal">
+          <img src="assets/portfolio/Jose Rizal.png" alt="Jose Rizal" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">22</span>
+          <h3>Jose Rizal</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/anata nike.png" aria-label="Open Anata Nike">
+          <img src="assets/portfolio/anata nike.png" alt="Anata Nike" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">23</span>
+          <h3>Anata Nike</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <button class="project-image" data-lightbox="assets/portfolio/jordan.png" aria-label="Open Jordan">
+          <img src="assets/portfolio/jordan.png" alt="Jordan" loading="lazy">
+        </button>
+        <div class="project-info">
+          <span class="project-number">24</span>
+          <h3>Jordan</h3>
+          <p>Graphic design & visual content</p>
+        </div>
+      </article></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head"><div><div class="eyebrow">About</div><h2>A designer with a technical edge.</h2></div></div>
+      <div class="about-grid">
+        <div class="about-copy">
+          I’m a cheerful and ambitious designer with a passion for graphic design, digital content creation and branding. My IT background also gives me a strong understanding of digital products, interfaces and technical problem-solving.
+          <div class="skills">
+            <span class="skill">Graphic Design</span><span class="skill">Adobe Photoshop</span><span class="skill">Adobe Illustrator</span>
+            <span class="skill">Canva</span><span class="skill">Figma</span><span class="skill">Digital Content</span>
+          </div>
+        </div>
+        <div class="facts">
+          <div class="fact"><small>Education</small><strong>BS Information Technology</strong><span>Rizal Technological University</span></div>
+          <div class="fact"><small>Experience</small><strong>Graphic Artist Intern</strong><span>Algo Filipino • Teravision</span></div>
+          <div class="fact"><small>Location</small><strong>Rizal, Philippines</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head"><div><div class="eyebrow">Capabilities</div><h2>What I bring</h2></div></div>
+      <div class="gallery" style="grid-template-columns:repeat(2,1fr)">
+        <div class="fact"><small>Design</small><strong>Branding, social media graphics, promotional posters, visual layouts and image editing.</strong></div>
+        <div class="fact"><small>Digital</small><strong>Content creation, UI design, digital platforms and basic web/database knowledge.</strong></div>
+        <div class="fact"><small>Technical</small><strong>Basic PHP, Python, C++, HTML and SQL plus hardware troubleshooting.</strong></div>
+        <div class="fact"><small>Professional</small><strong>Communication, time management, attention to detail and fast learning.</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container contact">
+      <div>
+        <div class="eyebrow">Let’s work together</div>
+        <h2>Have a project<br>in mind?</h2>
+        <p style="color:var(--muted)">For job opportunities, freelance work or design collaborations, feel free to reach out.</p>
+      </div>
+      <div class="contact-box">
+        <a href="mailto:reyjackcrisostomo5@gmail.com">reyjackcrisostomo5@gmail.com ↗</a>
+        <a href="tel:+639459952043">+63 945 995 2043 ↗</a>
+        <a href="https://www.instagram.com/nishiii.designs" target="_blank" rel="noopener">instagram.com/nishiii.designs ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container">© 2026 Rey Jack Crisostomo. Designed & built as a professional portfolio.</div></footer>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Artwork preview" onclick="closeModal(event)">
+  <button class="close" aria-label="Close">×</button>
+  <img id="modalImg" src="" alt="">
+</div>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('mobileNav');
+  if(m.style.display==='flex'){m.style.display='none';return;}
+  m.innerHTML='<a href="#work" onclick="toggleMenu()">Work</a><a href="#about" onclick="toggleMenu()">About</a><a href="#skills" onclick="toggleMenu()">Skills</a><a href="#contact" onclick="toggleMenu()">Contact</a><a href="mailto:reyjackcrisostomo5@gmail.com">Hire me</a>';
+  m.style.display='flex';
+}
+document.querySelectorAll('[data-lightbox]').forEach(btn=>btn.addEventListener('click',()=>{
+  document.getElementById('modalImg').src=btn.dataset.lightbox;
+  document.getElementById('modalImg').alt=btn.getAttribute('aria-label')||'Artwork';
+  document.getElementById('modal').classList.add('open');
+}));
+function closeModal(e){if(e.target.id==='modal'||e.target.classList.contains('close'))document.getElementById('modal').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('modal').classList.remove('open');});
+</script>
+</body>
+</html>
