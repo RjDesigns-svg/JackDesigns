@@ -50,8 +50,25 @@
     .fact strong{display:block;margin-top:5px}
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .project-card{border:1px solid var(--line);background:var(--panel);border-radius:var(--radius);overflow:hidden}
-    .project-image{width:100%;aspect-ratio:4/3;padding:0;border:0;background:#0d0d11;cursor:pointer;overflow:hidden}
-    .project-image img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+  .project-image {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Enforces a consistent ratio for all cards */
+  padding: 0;
+  border: 0;
+  background: #0d0d11;
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+}
+
+/* Image element styling */
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops images evenly to fill the box without distortion */
+  object-position: center; /* Centers the crop focus */
+  transition: transform .45s ease;
+}
     .project-card:hover img{transform:scale(1.035)}
     .project-info{padding:18px 20px 22px;position:relative}
     .project-number{color:var(--muted);font-size:11px;letter-spacing:.15em}
