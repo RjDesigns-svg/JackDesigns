@@ -90,6 +90,47 @@
       color: #777;
       background: #0a0a0a;
     }
+      h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #444;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .caption {
+      padding: 15px;
+      text-align: center;
+      font-weight: 500;
+      color: #ccc;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+      background: #0a0a0a;
+    }
   </style>
 </head>
 <body>
@@ -161,7 +202,7 @@
   </section>
 
     <section>
-    <h2>Film & Visual Storytelling</h2>
+    <h3>Film & Visual Storytelling</h3>
     <div class="gallery">
       <div class="gallery-item"><img src="ac.png"><div class="caption">AC - Sport Poster</div></div>
 
